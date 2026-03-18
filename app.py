@@ -24,8 +24,7 @@ st.markdown("""
 # Carica dati
 @st.cache_data
 def load_data():
-    path = "/Users/robertobiagetti/.cache/kagglehub/datasets/sunnykakar/cannabis-retail-sales/versions/1/Cannabis_Retail_Sales_by_Week_Ending.csv"
-    df = pd.read_csv(path)
+    df = pd.read_csv("Cannabis_Retail_Sales_by_Week_Ending.csv")
     df['Week Ending'] = pd.to_datetime(df['Week Ending'])
     df = df.sort_values('Week Ending')
     return df
